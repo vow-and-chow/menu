@@ -3,13 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Menu</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Arpan & Nimmy Feast</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFF3E0;
+            color: #4A1E1E;
+            background-image: url('https://www.transparenttextures.com/patterns/indian-flower.png');
+        }
+        h1 {
+            text-align: center;
+            color: #D4AF37;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+        #categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .category-btn {
+            margin: 5px;
+            padding: 12px 24px;
+            background-color: #C41E3A;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            color: #FFF;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .category-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        .category-btn.active {
+            background-color: #D4AF37;
+            color: #4A1E1E;
+        }
+        #menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .menu-item {
+            padding: 20px;
+            border: 2px solid #D4AF37;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .menu-item h3 {
+            margin-top: 0;
+            color: #C41E3A;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .menu-item p {
+            color: #4A1E1E;
+        }
+    </style>
 </head>
 <body>
-    <h1>Our Menu</h1>
+    <h1>🎉 Arpan & Nimmy Feast 🎉</h1>
     <div id="categories"></div>
     <div id="menu-items"></div>
-    <script src="script.js"></script>
+
+    <script>
+        const menuData = {
+            "Appetizers": [
+                { name: "Samosas", ingredients: "Pastry, potatoes, peas, spices" },
+                { name: "Paneer Tikka", ingredients: "Cottage cheese, yogurt, spices" },
+                { name: "Aloo Tikki", ingredients: "Potatoes, peas, spices, chutney" },
+                { name: "Dahi Puri", ingredients: "Puffed puris, yogurt, tamarind chutney, sev" }
+            ],
+            "Main Courses": [
+                { name: "Butter Chicken", ingredients: "Chicken, tomato sauce, butter, cream, spices" },
+                { name: "Palak Paneer", ingredients: "Spinach, cottage cheese, spices" },
+                { name: "Vegetable Biryani", ingredients: "Basmati rice, mixed vegetables, saffron, spices" },
+                { name: "Dal Makhani", ingredients: "Black lentils, red kidney beans, cream, butter" }
+            ],
+            "Breads & Rice": [
+                { name: "Naan", ingredients: "Flour, yogurt, butter" },
+                { name: "Garlic Roti", ingredients: "Whole wheat flour, garlic, coriander" },
+                { name: "Jeera Rice", ingredients: "Basmati rice, cumin seeds, ghee" },
+                { name: "Laccha Paratha", ingredients: "Whole wheat flour, ghee, layers" }
+            ],
+            "Desserts": [
+                { name: "Gulab Jamun", ingredients: "Milk solids, sugar syrup, cardamom" },
+                { name: "Rasmalai", ingredients: "Cottage cheese, milk, nuts, saffron" },
+                { name: "Gajar Ka Halwa", ingredients: "Carrots, milk, sugar, ghee, nuts" },
+                { name: "Kulfi", ingredients: "Reduced milk, pistachios, cardamom" }
+            ]
+        };
+
+        function createCategories() {
+            const categoriesDiv = document.getElementById('categories');
+            Object.keys(menuData).forEach((category, index) => {
+                const button = document.createElement('button');
+                button.textContent = category;
+                button.classList.add('category-btn');
+                if (index === 0) button.classList.add('active');
+                button.onclick = (event) => showCategory(category, event);
+                categoriesDiv.appendChild(button);
+            });
+        }
+
+        function showCategory(category, event) {
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const menuItemsDiv = document.getElementById('menu-items');
+            menuItemsDiv.innerHTML = '';
+            menuData[category].forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('menu-item');
+                itemDiv.innerHTML = `<h3>${item.name}</h3><p>${item.ingredients}</p>`;
+                menuItemsDiv.appendChild(itemDiv);
+            });
+        }
+
+        createCategories();
+        showCategory(Object.keys(menuData)[0], { target: document.querySelector('.category-btn') });
+    </script>
 </body>
 </html>
