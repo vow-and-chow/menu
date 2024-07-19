@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arpan & Nimmy Feast</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
         body {
             font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f0f0;
+            color: #4A1E1E;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .outbox {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #FFF3E0;
-            color: #4A1E1E;
-            background-image: url('https://www.transparenttextures.com/patterns/indian-flower.png');
+            position: relative;
+            z-index: 1;
         }
-        h1 {
+
+        .flower-top-right,
+        .flower-bottom-left {
+            position: fixed;
+            width: 50%;
+            height: auto;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        .flower-top-right {
+            top: -10%;
+            right: -10%;
+        }
+
+        .flower-bottom-left {
+            bottom: -10%;
+            left: -10%;
+        }
+
+        h1,
+        h2 {
             text-align: center;
             color: #D4AF37;
             font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             margin-bottom: 30px;
         }
+
         #categories {
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
+
         .category-btn {
             margin: 5px;
             padding: 12px 24px;
@@ -38,33 +72,39 @@
             color: #FFF;
             transition: all 0.3s;
             font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .category-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
+
         .category-btn.active {
             background-color: #D4AF37;
             color: #4A1E1E;
         }
+
         #menu-items {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
+
         .menu-item {
             padding: 20px;
             border: 2px solid #D4AF37;
             border-radius: 15px;
             background-color: rgba(255, 255, 255, 0.9);
             transition: all 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .menu-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
+
         .menu-item h3 {
             margin-top: 0;
             color: #C41E3A;
@@ -72,16 +112,51 @@
             padding-bottom: 10px;
             margin-bottom: 10px;
         }
+
         .menu-item p {
             color: #4A1E1E;
         }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #D4AF37;
+            text-align: center;
+        }
+
+        .disclaimer {
+            font-size: 0.8em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
     </style>
 </head>
-<body>
-    <h1>🎉 Arpan & Nimmy Feast 🎉</h1>
-    <div id="categories"></div>
-    <div id="menu-items"></div>
 
+<body>
+    <img src="https://images.zola.com/0bbd7cd1-d678-43ca-8ab8-ee888b66e35a?w=1000" alt="flowers"
+        class="flower-bottom-left">
+    <img src="https://images.zola.com/7674370e-2203-4345-b199-b21d30df58f2?w=1000" alt="flowers"
+        class="flower-top-right">
+
+    <div class="outbox">
+        <div class="css-e58mg4 esrdw8g5">
+            <h2 class="css-tc6qy3 esrdw8g0"
+                style="font-family: Kinfolk; color: rgb(66, 66, 66); font-weight: 400; text-transform: uppercase; line-height: 0.92; letter-spacing: 4px;">
+                Nimmy & Arpan Feast</h2>
+        </div>
+
+        <div id="categories"></div>
+        <div id="menu-items"></div>
+
+        <footer>
+            <p class="disclaimer">Disclaimer: Each guest is responsible for checking the ingredients and ensuring they
+                are suitable for their dietary needs or restrictions. The hosts and venue cannot be held responsible for
+                any allergic reactions or dietary issues.</p>
+        </footer>
+
+    </div>
     <script>
         const menuData = {
             "Appetizers": [
@@ -141,4 +216,5 @@
         showCategory(Object.keys(menuData)[0], { target: document.querySelector('.category-btn') });
     </script>
 </body>
+
 </html>
