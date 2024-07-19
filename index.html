@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arpan & Nimmy Feast</title>
-    <style>
+    <!-- <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
         body {
@@ -131,6 +131,148 @@
             margin: 0 auto;
             line-height: 1.4;
         }
+    </style> -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f5f2;
+            color: #333;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .outbox {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .flower-top-right,
+        .flower-bottom-left {
+            position: fixed;
+            width: 50%;
+            height: auto;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .flower-top-right {
+            top: -10%;
+            right: -10%;
+        }
+
+        .flower-bottom-left {
+            bottom: -10%;
+            left: -10%;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #3d405b;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        #categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            margin: 5px;
+            padding: 12px 24px;
+            background-color: #e07a5f;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            color: #fff;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            background-color: #d65f41;
+        }
+
+        .category-btn.active {
+            background-color: #81b29a;
+            color: #fff;
+        }
+
+        #menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            padding: 20px;
+            border: 1px solid #f2cc8f;
+            border-radius: 15px;
+            background-color: #ffffff;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .menu-item h3 {
+            margin-top: 0;
+            color: #3d405b;
+            border-bottom: 2px solid #f2cc8f;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .menu-item p {
+            color: #666;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #f2cc8f;
+            text-align: center;
+        }
+
+        .disclaimer {
+            font-size: 0.8em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
     </style>
 </head>
 
@@ -160,28 +302,28 @@
     <script>
         const menuData = {
             "Appetizers": [
-                { name: "Samosas", ingredients: "Pastry, potatoes, peas, spices" },
-                { name: "Paneer Tikka", ingredients: "Cottage cheese, yogurt, spices" },
-                { name: "Aloo Tikki", ingredients: "Potatoes, peas, spices, chutney" },
-                { name: "Dahi Puri", ingredients: "Puffed puris, yogurt, tamarind chutney, sev" }
+                { name: "Samosas", ingredients: "Pastry, potatoes, peas, spices", image: "images/samosa.jpg" },
+                { name: "Paneer Tikka", ingredients: "Cottage cheese, yogurt, spices", image: "images/samosa.jpg" },
+                { name: "Aloo Tikki", ingredients: "Potatoes, peas, spices, chutney", image: "images/samosa.jpg" },
+                { name: "Dahi Puri", ingredients: "Puffed puris, yogurt, tamarind chutney, sev", image: "images/samosa.jpg" }
             ],
             "Main Courses": [
-                { name: "Butter Chicken", ingredients: "Chicken, tomato sauce, butter, cream, spices" },
-                { name: "Palak Paneer", ingredients: "Spinach, cottage cheese, spices" },
-                { name: "Vegetable Biryani", ingredients: "Basmati rice, mixed vegetables, saffron, spices" },
-                { name: "Dal Makhani", ingredients: "Black lentils, red kidney beans, cream, butter" }
+                { name: "Butter Chicken", ingredients: "Chicken, tomato sauce, butter, cream, spices", image: "images/samosa.jpg" },
+                { name: "Palak Paneer", ingredients: "Spinach, cottage cheese, spices", image: "images/samosa.jpg" },
+                { name: "Vegetable Biryani", ingredients: "Basmati rice, mixed vegetables, saffron, spices", image: "images/samosa.jpg" },
+                { name: "Dal Makhani", ingredients: "Black lentils, red kidney beans, cream, butter", image: "images/samosa.jpg" }
             ],
             "Breads & Rice": [
-                { name: "Naan", ingredients: "Flour, yogurt, butter" },
-                { name: "Garlic Roti", ingredients: "Whole wheat flour, garlic, coriander" },
-                { name: "Jeera Rice", ingredients: "Basmati rice, cumin seeds, ghee" },
-                { name: "Laccha Paratha", ingredients: "Whole wheat flour, ghee, layers" }
+                { name: "Naan", ingredients: "Flour, yogurt, butter", image: "images/samosa.jpg" },
+                { name: "Garlic Roti", ingredients: "Whole wheat flour, garlic, coriander", image: "images/samosa.jpg" },
+                { name: "Jeera Rice", ingredients: "Basmati rice, cumin seeds, ghee", image: "images/samosa.jpg" },
+                { name: "Laccha Paratha", ingredients: "Whole wheat flour, ghee, layers", image: "images/samosa.jpg" }
             ],
             "Desserts": [
-                { name: "Gulab Jamun", ingredients: "Milk solids, sugar syrup, cardamom" },
-                { name: "Rasmalai", ingredients: "Cottage cheese, milk, nuts, saffron" },
-                { name: "Gajar Ka Halwa", ingredients: "Carrots, milk, sugar, ghee, nuts" },
-                { name: "Kulfi", ingredients: "Reduced milk, pistachios, cardamom" }
+                { name: "Gulab Jamun", ingredients: "Milk solids, sugar syrup, cardamom", image: "images/samosa.jpg" },
+                { name: "Rasmalai", ingredients: "Cottage cheese, milk, nuts, saffron", image: "images/samosa.jpg" },
+                { name: "Gajar Ka Halwa", ingredients: "Carrots, milk, sugar, ghee, nuts", image: "images/samosa.jpg" },
+                { name: "Kulfi", ingredients: "Reduced milk, pistachios, cardamom", image: "images/samosa.jpg" }
             ]
         };
 
@@ -207,7 +349,11 @@
             menuData[category].forEach(item => {
                 const itemDiv = document.createElement('div');
                 itemDiv.classList.add('menu-item');
-                itemDiv.innerHTML = `<h3>${item.name}</h3><p>${item.ingredients}</p>`;
+                itemDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="menu-item-image">
+            <h3>${item.name}</h3>
+            <p>${item.ingredients}</p>
+        `;
                 menuItemsDiv.appendChild(itemDiv);
             });
         }
