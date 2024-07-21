@@ -300,32 +300,66 @@
 
     </div>
     <script>
+        // const menuData = {
+        //     "Appetizers": [
+        //         { name: "Samosas", ingredients: "Pastry, potatoes, peas, spices", image: "images/samosa.jpg" },
+        //         { name: "Paneer Tikka", ingredients: "Cottage cheese, yogurt, spices", image: "images/samosa.jpg" },
+        //         { name: "Aloo Tikki", ingredients: "Potatoes, peas, spices, chutney", image: "images/samosa.jpg" },
+        //         { name: "Dahi Puri", ingredients: "Puffed puris, yogurt, tamarind chutney, sev", image: "images/samosa.jpg" }
+        //     ],
+        //     "Main Courses": [
+        //         { name: "Butter Chicken", ingredients: "Chicken, tomato sauce, butter, cream, spices", image: "images/samosa.jpg" },
+        //         { name: "Palak Paneer", ingredients: "Spinach, cottage cheese, spices", image: "images/samosa.jpg" },
+        //         { name: "Vegetable Biryani", ingredients: "Basmati rice, mixed vegetables, saffron, spices", image: "images/samosa.jpg" },
+        //         { name: "Dal Makhani", ingredients: "Black lentils, red kidney beans, cream, butter", image: "images/samosa.jpg" }
+        //     ],
+        //     "Breads & Rice": [
+        //         { name: "Naan", ingredients: "Flour, yogurt, butter", image: "images/samosa.jpg" },
+        //         { name: "Garlic Roti", ingredients: "Whole wheat flour, garlic, coriander", image: "images/samosa.jpg" },
+        //         { name: "Jeera Rice", ingredients: "Basmati rice, cumin seeds, ghee", image: "images/samosa.jpg" },
+        //         { name: "Laccha Paratha", ingredients: "Whole wheat flour, ghee, layers", image: "images/samosa.jpg" }
+        //     ],
+        //     "Desserts": [
+        //         { name: "Gulab Jamun", ingredients: "Milk solids, sugar syrup, cardamom", image: "images/samosa.jpg" },
+        //         { name: "Rasmalai", ingredients: "Cottage cheese, milk, nuts, saffron", image: "images/samosa.jpg" },
+        //         { name: "Gajar Ka Halwa", ingredients: "Carrots, milk, sugar, ghee, nuts", image: "images/samosa.jpg" },
+        //         { name: "Kulfi", ingredients: "Reduced milk, pistachios, cardamom", image: "images/samosa.jpg" }
+        //     ]
+        // };
+
         const menuData = {
-            "Appetizers": [
-                { name: "Samosas", ingredients: "Pastry, potatoes, peas, spices", image: "images/samosa.jpg" },
-                { name: "Paneer Tikka", ingredients: "Cottage cheese, yogurt, spices", image: "images/samosa.jpg" },
-                { name: "Aloo Tikki", ingredients: "Potatoes, peas, spices, chutney", image: "images/samosa.jpg" },
-                { name: "Dahi Puri", ingredients: "Puffed puris, yogurt, tamarind chutney, sev", image: "images/samosa.jpg" }
-            ],
-            "Main Courses": [
-                { name: "Butter Chicken", ingredients: "Chicken, tomato sauce, butter, cream, spices", image: "images/samosa.jpg" },
-                { name: "Palak Paneer", ingredients: "Spinach, cottage cheese, spices", image: "images/samosa.jpg" },
-                { name: "Vegetable Biryani", ingredients: "Basmati rice, mixed vegetables, saffron, spices", image: "images/samosa.jpg" },
-                { name: "Dal Makhani", ingredients: "Black lentils, red kidney beans, cream, butter", image: "images/samosa.jpg" }
-            ],
-            "Breads & Rice": [
-                { name: "Naan", ingredients: "Flour, yogurt, butter", image: "images/samosa.jpg" },
-                { name: "Garlic Roti", ingredients: "Whole wheat flour, garlic, coriander", image: "images/samosa.jpg" },
-                { name: "Jeera Rice", ingredients: "Basmati rice, cumin seeds, ghee", image: "images/samosa.jpg" },
-                { name: "Laccha Paratha", ingredients: "Whole wheat flour, ghee, layers", image: "images/samosa.jpg" }
-            ],
-            "Desserts": [
-                { name: "Gulab Jamun", ingredients: "Milk solids, sugar syrup, cardamom", image: "images/samosa.jpg" },
-                { name: "Rasmalai", ingredients: "Cottage cheese, milk, nuts, saffron", image: "images/samosa.jpg" },
-                { name: "Gajar Ka Halwa", ingredients: "Carrots, milk, sugar, ghee, nuts", image: "images/samosa.jpg" },
-                { name: "Kulfi", ingredients: "Reduced milk, pistachios, cardamom", image: "images/samosa.jpg" }
-            ]
-        };
+    "Appetizers": [
+        { name: "Pao Bhaji Crostini", ingredients: "Spicy minced vegetable served on bread", image: "images/Pao_Bhaji_Crostini.webp", category: "veg" },
+        { name: "Tandoori Paneer Lollypop with Chipotle Aioli", ingredients: "Mashed and seasoned char grilled cottage cheese balls", image: "images/paneer_lollypop.jpg", category: "veg" },
+        { name: "Tandoori Salmon on Stick", ingredients: "Fillets of salmon cooked in clay oven", image: "images/salmon.jpg", category: "non-veg" },
+        { name: "Spiced Infused Water chestnut Delight", ingredients: "Deep fried water chestnuts tossed in sweet and spicy sauce", image: "images/chestnut.jpg", category: "veg" },
+        { name: "Masala Corn Shooters", ingredients: "Corn in sweet and spicy sauces", image: "images/corn.jpg", category: "veg" },
+        { name: "Lamb Kofta Kebab wth Taziki", ingredients: "Minced Lamb with indian spices and Greek yoghurt", image: "images/lambkofta.jpg", category: "non-veg" },
+        { name: "Brocolli Spinach Cream Cheese Kebab", ingredients: "Brocolli and spinach Kebabs infused with cheese and indian spices", image: "images/Broccoli.webp", category: "veg" }
+    ],
+    "Main Courses": [
+        { name: "Murgh Lajawab", ingredients: "Shredded chicken stir cooked with a blend of spices and shreds of red & green chilies, ginger and fresh coriander", image: "images/murgh_lajawab.jpg", category: "non-veg" },
+        { name: "Lamb Rogan Josh", ingredients: "Boneless lamb cooked with its own juices in light gravy", image: "images/lamb_rogan_josh.jpg", category: "non-veg" },
+        { name: "Palak Paneer", ingredients: "Cottage cheese cubes cooked in a spinach sauce", image: "images/palak_paneer.jpg", category: "veg" },
+        { name: "Shaam Savera", ingredients: "Spinach & cottage cheese dumplings in butter based gravy", image: "images/shaam_savera.jpg", category: "veg" },
+        { name: "Dal Maharani", ingredients: "Black lentils, red kidney beans, cream, butter", image: "images/dal_maharani.jpg", category: "veg" },
+        { name: "Saffron Jeera Peas Pulao", ingredients: "Saffron rice with cumin seeds and green peas", image: "images/saffron_pulao.jpg", category: "veg" },
+        { name: "Dal Maharani", ingredients: "Black lentils, red kidney beans, cream, butter", image: "images/dal_maharani.jpg", category: "veg" },
+        { name: "Boondi Raita", ingredients: "Yogurt with soft mini bread puffs & indian seasoning", image: "images/boondi_raita.webp", category: "veg" },
+        { name: "Assorted Tandoori Bread", ingredients: "Naan, Lachcha Paratha, Garlic Naan & Onion Kulcha", image: "images/assorted_bread.jpg", category: "veg" },
+      
+
+    ],
+    "Live Station": [
+        { name: "Palak Patte Ki Chaat", ingredients: "Crispy fried spinach leaves topped with yogurt, diced onion, tomatoes, green chilies and tamarind sauce", image: "images/palakchat.webp", category: "veg" },
+        { name: "Cauliflower 65 Bao Bun", ingredients: "Steamed bao buns with Cauliflower", image: "images/calibao.webp", category: "veg" },
+        { name: "Idli Tak A Tak", ingredients: "Small size idli tossed with your own choice (indian style)", image: "images/idli.jpg", category: "veg" },
+    ],
+    "Desserts": [
+        { name: "Gulab Chenna Kheer with Mango Rabri", ingredients: "Bite size cottage cheese dumplings served in chilled mango condensed milk", image: "images/Rabdi.jpg", category: "veg" },
+        { name: "Banoffee Pie", ingredients: "A classic biscuit base, oozy caramel, bananas, cream and chocolate", image: "images/Banofie_Pie.jpg", category: "veg" },
+    ],
+};
 
         function createCategories() {
             const categoriesDiv = document.getElementById('categories');
@@ -339,24 +373,60 @@
             });
         }
 
-        function showCategory(category, event) {
-            const buttons = document.querySelectorAll('.category-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
 
-            const menuItemsDiv = document.getElementById('menu-items');
-            menuItemsDiv.innerHTML = '';
-            menuData[category].forEach(item => {
-                const itemDiv = document.createElement('div');
-                itemDiv.classList.add('menu-item');
-                itemDiv.innerHTML = `
+        function showCategory(category, event) {
+    const buttons = document.querySelectorAll('.category-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const menuItemsDiv = document.getElementById('menu-items');
+    menuItemsDiv.innerHTML = '';
+    menuData[category].forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('menu-item');
+        
+        // Define the category symbol
+        let categorySymbol;
+        switch(item.category) {
+            case 'non-veg':
+                categorySymbol = '🍖';
+                break;
+            case 'veg':
+                categorySymbol = '🥬';
+                break;
+            case 'vegan':
+                categorySymbol = '🌱';
+                break;
+            default:
+                categorySymbol = '';
+        }
+        
+        itemDiv.innerHTML = `
             <img src="${item.image}" alt="${item.name}" class="menu-item-image">
-            <h3>${item.name}</h3>
+            <h3>${item.name} ${categorySymbol}</h3>
             <p>${item.ingredients}</p>
         `;
-                menuItemsDiv.appendChild(itemDiv);
-            });
-        }
+        menuItemsDiv.appendChild(itemDiv);
+    });
+}
+        // function showCategory(category, event) {
+        //     const buttons = document.querySelectorAll('.category-btn');
+        //     buttons.forEach(btn => btn.classList.remove('active'));
+        //     event.target.classList.add('active');
+
+        //     const menuItemsDiv = document.getElementById('menu-items');
+        //     menuItemsDiv.innerHTML = '';
+        //     menuData[category].forEach(item => {
+        //         const itemDiv = document.createElement('div');
+        //         itemDiv.classList.add('menu-item');
+        //         itemDiv.innerHTML = `
+        //     <img src="${item.image}" alt="${item.name}" class="menu-item-image">
+        //     <h3>${item.name}</h3>
+        //     <p>${item.ingredients}</p>
+        // `;
+        //         menuItemsDiv.appendChild(itemDiv);
+        //     });
+        // }
 
         createCategories();
         showCategory(Object.keys(menuData)[0], { target: document.querySelector('.category-btn') });
